@@ -1,0 +1,11 @@
+Project: Intelligent API Rate-Limit Engine
+Day 1:
+- Understood rate limiting fundamentals
+- Designed system architecture
+- Defined decision model & enforcement strategy
+- Planned demo app integration
+
+Day 2:
+- Understood Sliding window logic
+- Behavior profiling
+- Thread-safety basics
