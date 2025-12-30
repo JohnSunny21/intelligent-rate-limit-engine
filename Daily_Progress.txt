@@ -24,3 +24,8 @@ Day 4:
 - Risk-based decisions
 - Time-based blocking
 - Clean separation of concerns
+
+Day 5:
+- Risk-based decisions
+- Violation Memory
+- Context aware enforcement

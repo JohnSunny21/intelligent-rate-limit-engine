@@ -54,6 +54,7 @@ public class DecisionEngine {
 
         double score = 0.0;
 
+        // Behavior-based signals
         if(profile.isBursting()){
             score += 0.4;
         }
@@ -62,8 +63,11 @@ public class DecisionEngine {
             score += 0.3;
         }
 
-        if(context.getType() == RequestType.LOGIN){
-            score += 0.2;
+        // Endpoint sensitivity
+        switch(context.getType().getRiskLevel()){
+            case HIGH: score += 0.3;
+            case MEDIUM: score += 0.15;
+            case LOW: score += 0.05;
         }
 
         return Math.min(score, 1.0);
