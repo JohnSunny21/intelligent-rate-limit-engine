@@ -9,3 +9,18 @@ Day 2:
 - Understood Sliding window logic
 - Behavior profiling
 - Thread-safety basics
+
+Day 3:
+- Adding Decision Engine
+- Using multiple signals to analyse the risk
+- Why not ML
+    -> Deterministic logic
+    -> Debuggable
+    -> Safer for enforcement
+    -> Easier to reason about in interviews
+
+Day 4:
+- Behavior tracking
+- Risk-based decisions
+- Time-based blocking
+- Clean separation of concerns
