@@ -7,12 +7,11 @@ import java.util.Deque;
 
 public class BehaviorProfile {
 
-    private final String identity;
+
     private final long windowSizeMillis;
     private final Deque<RequestEvent> recentEvents = new ArrayDeque<>();
 
-    public BehaviorProfile(String identity, long windowSizeMillis) {
-        this.identity = identity;
+    public BehaviorProfile(long windowSizeMillis) {
         this.windowSizeMillis = windowSizeMillis;
     }
 
@@ -36,11 +35,12 @@ public class BehaviorProfile {
         return recentEvents.size();
     }
 
-    public synchronized double averageRatePerMinute(){
-        return requestCount() * (60_000.0 / windowSizeMillis);
+    public synchronized boolean exceedsLimit(int maxRequests){
+        // we need enough data before judging
+        return recentEvents.size() > maxRequests;
     }
 
-    public synchronized boolean isBursting(){
-        return requestCount() > averageRatePerMinute() * 2;
+    public synchronized void reset(){
+        recentEvents.clear();
     }
 }

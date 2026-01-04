@@ -8,6 +8,11 @@
     <groupId>com.engine</groupId>
     <artifactId>intelligent-rate-limit-engine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>engine-core</module>
+        <module>ratelimitdemoapp</module>
+    </modules>
 
     <properties>
         <java.version>17</java.version>

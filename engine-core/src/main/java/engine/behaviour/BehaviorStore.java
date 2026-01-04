@@ -4,7 +4,7 @@ import engine.model.RequestEvent;
 
 public interface BehaviorStore {
 
-    BehaviorProfile getOrCreate(String identity);
+    BehaviorProfile getOrCreate(String key);
 
-    void record(RequestEvent event);
+    void record(String key, RequestEvent event);
 }

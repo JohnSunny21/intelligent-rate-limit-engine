@@ -14,16 +14,16 @@ public class InMemoryBehaviorStore implements BehaviorStore{
     }
 
     @Override
-    public BehaviorProfile getOrCreate(String identity) {
+    public BehaviorProfile getOrCreate(String key) {
         return store.computeIfAbsent(
-                identity,
-                id -> new BehaviorProfile(id, windowSizeMillis)
+                key,
+                k -> new BehaviorProfile(windowSizeMillis)
         );
     }
 
     @Override
-    public void record(RequestEvent event) {
-        BehaviorProfile profile = getOrCreate(event.getContext().getIdentity());
-        profile.record(event);
+    public void record(String key,RequestEvent event) {
+         getOrCreate(key).record(event);
+
     }
 }
